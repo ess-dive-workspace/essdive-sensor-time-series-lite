@@ -6,11 +6,11 @@ The ESS-DIVE Sensor Time Series - Lite Reporting Format controlled vocabularies 
 [Data Dictionary File](#data-dictionary-file)
 - [unit](#unit)
 - [measured_variable](#measured_variable)
+- [material_measured](#material_measured)
 - [vertical_position_refererence](#vertical_position_reference)
 - [data_type](#data_type)
-- [material](#material)
-- [statistic](#statistic)
 - [representation_temporal](#representation_temporal)
+- [statistic](#statistic)
 
 ---
 
@@ -19,6 +19,7 @@ The ESS-DIVE Sensor Time Series - Lite Reporting Format controlled vocabularies 
 The controlled vocabulary for the unit is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum) (pdf). The Definition provided for the controlled vocabulary is the UCUM code.
 |Controlled Vocabulary|Definition|
 |:----------------------------------------------------|:----------------------------------------------------|
+|unitless|unitless|
 |degree Celsius|Cel|
 |microsiemens per centimeter|uS/cm|
 |milligrams per liter|mg/L|
@@ -41,7 +42,32 @@ The controlled vocabulary for the unit is based on the [Unified Code of Unified 
 |feet (international)|[ft_i]|
 
 ### measured_variable
-Use the Consortium of Universities for the Advancement of Hydrologic Science (CUAHSI) [Variable Name controlled vocabulary](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VariableNameCV&id=1157579162) "Term" column for the `measured_variable` field. CHUASHI's controlled vocabulary is based upon [ODM2's variable name controlled vocabulary](http://vocabulary.odm2.org/variablename/). 
+Use the Consortium of Universities for the Advancement of Hydrologic Science (CUAHSI) [Variable Name controlled vocabulary](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VariableNameCV&id=1157579162) "Term" column for the `measured_variable` term. CUAHSI's controlled vocabulary is based upon [ODM2's variable name controlled vocabulary](http://vocabulary.odm2.org/variablename/). 
+
+### material_measured
+The controlled vocabulary for the `material_measured` term is based on the [ODM2's medium controlled vocabulary](http://vocabulary.odm2.org/medium/).
+|Controlled Vocabulary|Definition|
+|:-------------------------------------------------------------------------------|:----------------------------------------------------|
+| air | Specimen collection of ambient air or sensor emplaced to measure properties of ambient air. |
+| gas | Gas phase specimen or sensor emplaced to measure properties of a gas. |
+| liquid_aqueous | Specimen collected as liquid water or sensor emplaced to measure properties of water in sampled environment. |
+| liquid_organic | Specimen collected as an organic liquid. |
+| ice | Sample collected as frozen water or sensor emplaced to measure properties of ice. |
+| snow | Observation in, of or sample taken from snow. |
+| soil | Specimen collected from soil or sensor emplaced to measure properties of soil. Soil includes the mixture of minerals, organic matter, gasses, liquids, and organisms that make up the upper layer of earth in which plants grow. |
+| sediment | Specimen collected from material broken down by processes of weathering and erosion and subsequently transported by the action of wind, water, or ice, and/or by the force of gravity acting on the particles. Sensors may also be emplaced to measure sediment properties. |
+| mineral | Specimen collected as a mineral. |
+| rock | Specimen collected from a naturally occuring solid aggregate of one or more minerals. |
+| regolith | The entire unconsolidated or secondarily recemented cover that overlies more coherent bedrock, that has been formed by weathering, erosion, transport and/or deposition of the older material. The regolith thus includes fractured and weathered basement rocks, saprolites, soils, organic accumulations, volcanic material, glacial deposits, colluvium, alluvium, evaporitic sediments, aeolian deposits and ground water. Everything from fresh rock to fresh air. |
+| particulate | Specimen collected from particulates suspended in a paticulate-fluid mixture. Examples include particulates in water or air. |
+| tissue | Sample of a living organism's tissue or sensor emplaced to measure property of tissue. |
+| organism | Data collected about a species at organism level. |
+| vegetation | The plants of an area considered in general or as communities, but not taxonomically. |
+| habitat | A habitat is an ecological or environmental area that is inhabited by a particular species of animal, plant, or other type of organism. |
+| equipment | An instrument, sensor or other piece of human-made equipment upon which a measurement is made, such as datalogger temperature or battery voltage. |
+| other | Other |
+| not_applicable | There is no applicable sampled medium. |
+| unknown | The sampled medium is unknown. |
 
 ### vertical_position_reference
 |Controlled Vocabulary|Definition|
@@ -52,7 +78,7 @@ Use the Consortium of Universities for the Advancement of Hydrologic Science (CU
 | water_surface | surface of a water body (e.g., lake, river, stream) |
 | mean_sea_level | mean sea level |
 | unknown | The vertical position reference is unknown. |
-| other | The vertical position reference is known, but not in the predefined list. Provide the known vertical position reference in the notes field. |
+| other | The vertical position reference is known, but not in the predefined list. Provide the known vertical position reference in the notes term. |
 
 ### data_type
 |Controlled Vocabulary|
@@ -61,42 +87,6 @@ Use the Consortium of Universities for the Advancement of Hydrologic Science (CU
 |numeric|
 |date|
 |datetime|
-
-### material
-|Controlled Vocabulary|
-|:-----------------------------------------------------------------|
-|Gas|
-|Ice|
-|Liquid>aqueous|
-|Liquid>organic|
-|Mineral|
-|NotApplicable|
-|Organic Material|
-|Other|
-|Particulate|
-|Plant Structure|
-|Rock|
-|Sediment|
-|Soil|
-|Synthetic|
-|Tephra|
-
-### statistic
-|Controlled Vocabulary|Definition|
-|:-------------------------------------------------------------------------------|:----------------------------------------------------|
-| mean | ISO 3534: 2006-1 sample mean (average, arithmetic mean) sum of random variables in a random sample divided by the number of terms in the sum |
-| minimum | Minimum value |
-| median | ISO 3534: 2006-1 sample median [(*n*+1)/2]th order statistic, if the sample size (see ISO 3534-2:2006, 1.2.26) *n* is odd; sum of the (*n*/2)th and [(*n*/2) + 1]th order statistics divided by 2, if the sample size *n* is even |
-| maximum | Maximum value |
-| total | Sum or cumulative amount measured during the sampling period |
-| standard deviation | ISO 3534:2006-1 standard deviation: positive square root of the variance; or sample standard deviation: non-negative square root of the sample variance |
-| standard error | ISO 3534:2006-1 standard error: standard deviation of an estimator. An estimator of the standard error is the sample standard deviation divided by the square root of the number of samples. |
-| measurement uncertainty | [JCGM 200:2012, 3rd edition](https://jcgm.bipm.org/vim/en/2.26.html) measurement uncertainty: non-negative parameter characterizing the dispersion of the quantity values being attributed to a measured (`measured_variable`), based on the information used |
-| R2 | Coefficient of determination |
-| RMSE | Root mean square error |
-| p-value | ISO 3534:2006-1 p-value: probability of observing the observed test statistic value or any other value at least as unfavourable to the null hypothesis |
-| CV | ISO 3534:2006-1 sample coefficient of variation: sample standard deviation divided by the sample mean |
-| covariance | ISO 3534:2006-1 sample covariance: sum of products of deviations of pairs of random variables in a random sample from their sample means divided by the number of terms in the sum minus one |
 
 ### representation_temporal
 |Controlled Vocabulary|
@@ -114,3 +104,19 @@ Use the Consortium of Universities for the Advancement of Hydrologic Science (CU
 |hertz|
 |other|
 
+### statistic
+|Controlled Vocabulary|Definition|
+|:-------------------------------------------------------------------------------|:----------------------------------------------------|
+| mean | ISO 3534: 2006-1 sample mean (average, arithmetic mean) sum of random variables in a random sample divided by the number of terms in the sum |
+| minimum | Minimum value |
+| median | ISO 3534: 2006-1 sample median [(*n*+1)/2]th order statistic, if the sample size (see ISO 3534-2:2006, 1.2.26) *n* is odd; sum of the (*n*/2)th and [(*n*/2) + 1]th order statistics divided by 2, if the sample size *n* is even |
+| maximum | Maximum value |
+| total | Sum or cumulative amount measured during the sampling period |
+| standard deviation | ISO 3534:2006-1 standard deviation: positive square root of the variance; or sample standard deviation: non-negative square root of the sample variance |
+| standard error | ISO 3534:2006-1 standard error: standard deviation of an estimator. An estimator of the standard error is the sample standard deviation divided by the square root of the number of samples. |
+| measurement uncertainty | [JCGM 200:2012, 3rd edition](https://jcgm.bipm.org/vim/en/2.26.html) measurement uncertainty: non-negative parameter characterizing the dispersion of the quantity values being attributed to a measured (`measured_variable`), based on the information used |
+| R2 | Coefficient of determination |
+| RMSE | Root mean square error |
+| p-value | ISO 3534:2006-1 p-value: probability of observing the observed test statistic value or any other value at least as unfavourable to the null hypothesis |
+| CV | ISO 3534:2006-1 sample coefficient of variation: sample standard deviation divided by the sample mean |
+| covariance | ISO 3534:2006-1 sample covariance: sum of products of deviations of pairs of random variables in a random sample from their sample means divided by the number of terms in the sum minus one |
