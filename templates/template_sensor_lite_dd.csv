@@ -1,0 +1,6 @@
+column_or_row_name,unit,definition,measured_variable,material_measured,latitude,longitude,location_description,vertical_position,vertical_position_reference,treatment_id,column_or_row_long_name,data_type,missing_value_code,unit_basis,representation_temporal,statistic_measurement,statistic_measurement_number,statistic_spatial,statistic_spatial_number,statistic_temporal,statistic_temporal_number,statistic_detail,notes
+datetime_measured,N/A,"Date and time of measurement, to known specificity.",N/A,N/A,-9999,-9999,N/A,-9999,N/A,N/A,N/A,datetime,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+datetime_measured_start,N/A,"Date and time of the start of the measurement, to known specificity.",N/A,N/A,-9999,-9999,N/A,-9999,N/A,N/A,N/A,datetime,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+datetime_measured_end,N/A,"Date and time of the end of the measurement, to known specificity.",N/A,N/A,-9999,-9999,N/A,-9999,N/A,N/A,N/A,datetime,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+notes,N/A,Free text notes field.,N/A,N/A,-9999,-9999,N/A,-9999,N/A,N/A,N/A,text,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+{measurement_column_name}_flag,N/A,User-defined identifier that indicates a flag for the individual measurement in the corresponding measurement_column_name.,N/A,N/A,-9999,-9999,N/A,-9999,N/A,N/A,N/A,text,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
