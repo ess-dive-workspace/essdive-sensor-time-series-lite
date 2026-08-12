@@ -42,7 +42,7 @@
 - **Purpose:** lists and describes column_or_row_name to provide metadata for each column header.
 - **Format:** comma-separated value (.csv)
 - **Governed by:** [File Level Metadata (FLMD) Reporting Format](https://github.com/ess-dive-workspace/essdive-file-level-metadata) with required modifications detailed in this Sensor Time Series - Lite Reporting Format (see details below).
-- Use the Sensor Time Series - Lite Reporting Format template to structure data dictionary (DD) files. Name the file “`dd.csv`” or with the suffix “`dd.csv`”. The term guide has term descriptions and requirements.  _Extension (new) or modified terms that build on the DD structure governed by the FLMD Reporting Format are marked with a plus below._
+- Use the Sensor Time Series - Lite Reporting Format template to structure data dictionary (DD) files. Name the file “`dd.csv`” or with the suffix “`_dd.csv`”. The term guide has term descriptions and requirements.  _Extension (new) or modified terms that build on the DD structure governed by the FLMD Reporting Format are marked with a plus below._
     - Required terms include:
         - `column_or_row_name`
         - `unit`
@@ -72,14 +72,15 @@
         - `statistic_detail`+
         - `notes`+
 - The DD template includes definitions for the required and optional terms. These definitions must be used as-is in the `definition` column when you create the data dictionaries for your data package.
-- Column headers defined in the DD cannot be repeated in the same DD. If column headers have different metadata across data files, the data files must use separate DD files.
+- Column names (`column_or_row_name`) defined in the DD cannot be repeated in the same DD.
+    -  If column headers have different metadata across data files (e.g., a different unit or definition) but the column name does not change, the data files must use separate DD files, i.e., there must be a specific DD file per data file.
 - If your dataset contains other data dictionaries, the data dictionaries associated with these Sensor Time Series - Lite Reporting Format files must be separate.
 
 ### FILE LEVEL METADATA FILE
-- **Purpose:** lists and describes file_name to provide metadata for each file.
+- **Purpose:** lists and describes `file_name` to provide metadata for each file.
 - **Format:** comma-separated value (.csv)
-- **Governed by:** File Level Metadata (FLMD) Reporting Format available at https://github.com/ess-dive-workspace/essdive-file-level-metadata, with required modifications detailed in this Sensor Time Series - Lite Reporting Format.
-- Use the Sensor Time Series - Lite Reporting Format template to structure FLMD files. Name the file “`flmd.csv`” or with the suffix “`_flmd.csv`”. The term guide has term descriptions and requirements The template includes original FLMD Reporting Format terms and extensions that build upon it. Use the Sensor Time Series - Lite Reporting Format term guide for descriptions and requirements; original FLMD terms that are not extended have links to the FLMD term guide. _Extension terms that build on the FLMD structure governed by the FLMD Reporting Format are marked with a plus below._
+- **Governed by:** [File Level Metadata (FLMD) Reporting Format](https://github.com/ess-dive-workspace/essdive-file-level-metadata) with required modifications detailed in this Sensor Time Series - Lite Reporting Format (see details below).
+- Use the Sensor Time Series - Lite Reporting Format template to structure FLMD files. Name the file “`flmd.csv`” or with the suffix “`_flmd.csv`”. The term guide has term descriptions and requirements. _Extension terms that build on the FLMD structure governed by the FLMD Reporting Format are marked with a plus below._
     - Required terms include:
         - `file_name`
         - `file_description`
@@ -91,7 +92,7 @@
         - `header_rows`
         - `notes`
 - The data and methods and attributes files listed in the FLMD should have “ESS-DIVE Sensor Time Series - Lite Reporting Format v1” listed in the `standard` column.
-- If you include the optional terms `data_orientation`, `header_rows`, or `column_or_row_name_position`, report the values above for the files following this RF.
+- If you include the optional terms `data_orientation`, `header_rows`, or `column_or_row_name_position`, the reported values should be “horizontal”, “1”, and “1”, respectively, for the files following this RF.
 
 ## ADDITIONAL CONSIDERATIONS
 - You are encouraged to include raw data files, sensor/instrument specification PDFs from manufacturers, code used for data collection or data processing, and/or links to relevant content (i.e., GitHub, Zenodo). The RF does not provide specific guidance on formats of these additional files. 
