@@ -41,7 +41,7 @@
 ### DATA DICTIONARY FILES
 - **Purpose:** lists and describes column_or_row_name to provide metadata for each column header.
 - **Format:** comma-separated value (.csv)
-- **Governed by:** File Level Metadata (FLMD) Reporting Format available at https://github.com/ess-dive-workspace/essdive-file-level-metadata, with required modifications detailed in this Sensor Time Series - Lite Reporting Format (see details below).
+- **Governed by:** [File Level Metadata (FLMD) Reporting Format](https://github.com/ess-dive-workspace/essdive-file-level-metadata) with required modifications detailed in this Sensor Time Series - Lite Reporting Format (see details below).
 - Use the Sensor Time Series - Lite Reporting Format template to structure data dictionary (DD) files. Name the file “`dd.csv`” or with the suffix “`dd.csv`”. The term guide has term descriptions and requirements.  _Extension (new) or modified terms that build on the DD structure governed by the FLMD Reporting Format are marked with a plus below._
     - Required terms include:
         - `column_or_row_name`
